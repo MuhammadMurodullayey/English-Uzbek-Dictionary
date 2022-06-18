@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav.xml"
+    app:startDestination="@id/mainScreen">
+
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="uz.gita.dictionaryuzen.presentation.ui.screens.MainScreen"
+        android:label="screen_main"
+        tools:layout="@layout/screen_main" >
+        <action
+            android:id="@+id/action_mainScreen_to_screenItemList"
+            app:destination="@id/screenItemList" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenItemList"
+        android:name="uz.gita.dictionaryuzen.presentation.ui.screens.ScreenItemList"
+        android:label="screen_dialog_list"
+        tools:layout="@layout/screen_dictionary_list" >
+        <action
+            android:id="@+id/action_screenItemList_to_infoScreen"
+            app:destination="@id/infoScreen" />
+        <action
+            android:id="@+id/action_screenItemList_to_favoriteScreen"
+            app:destination="@id/favoriteScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoScreen"
+        android:name="uz.gita.dictionaryuzen.presentation.ui.screens.InfoScreen"
+        android:label="screen_info"
+        tools:layout="@layout/screen_info" >
+        <action
+            android:id="@+id/action_infoScreen_self"
+            app:destination="@id/infoScreen"
+            app:popUpTo="@id/infoScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteScreen"
+        android:name="uz.gita.dictionaryuzen.presentation.ui.screens.FavoriteScreen"
+        android:label="screen_favorite"
+        tools:layout="@layout/screen_favorite" >
+        <action
+            android:id="@+id/action_favoriteScreen_to_infoScreen"
+            app:destination="@id/infoScreen" />
+    </fragment>
+</navigation>
