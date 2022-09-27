@@ -13,11 +13,12 @@ interface DatabaseDao {
                 "from dictionary"
     )
     fun getAllEnglishWords(): Cursor
+
     @Query(
         "select id, english , type,transcript, uzbek, is_favourite as isFavourite " +
                 "from dictionary where english = :word1 or english = :word2 or english = :word3 or english = :word4"
     )
-    fun getNearEnglishWords(word1 : String, word2 : String, word3 : String,word4 : String): Cursor
+    fun getNearEnglishWords(word1: String, word2: String, word3: String, word4: String): Cursor
 
     @Query(
         "select id, english , type,transcript, uzbek, is_favourite as isFavourite " +
@@ -30,11 +31,12 @@ interface DatabaseDao {
                 "from dictionary  ORDER BY uzbek ASC"
     )
     fun getAllUzbekWords(): Cursor
+
     @Query(
         "select id, english , type,transcript, uzbek, is_favourite as isFavourite " +
                 "from dictionary where uzbek = :word1 or uzbek = :word2 or uzbek = :word3  or uzbek = :word4 ORDER BY uzbek ASC"
     )
-    fun getNearUzbekWords(word1 : String, word2 : String, word3 : String,word4 : String): Cursor
+    fun getNearUzbekWords(word1: String, word2: String, word3: String, word4: String): Cursor
 
     @Query(
         "select id, english , type,transcript, uzbek, is_favourite as isFavourite " +
