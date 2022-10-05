@@ -7,7 +7,7 @@
     tools:context="uz.gita.dictionaryuzen.presentation.ui.screens.FavoriteScreen">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/barr"
-        android:background="#DCDADA"
+        android:background="#00BCD4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"

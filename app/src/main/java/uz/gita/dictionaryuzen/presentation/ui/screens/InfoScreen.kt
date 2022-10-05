@@ -105,9 +105,9 @@ class InfoScreen : Fragment(R.layout.screen_info) {
             binding.near.text = "o'xshash so'zlar"
         }
         if (data.isFavourite == 0) {
-            binding.btnStar.setImageResource(R.drawable.star)
+            binding.btnStar.setImageResource(R.drawable.nofavorite)
         } else {
-            binding.btnStar.setImageResource(R.drawable.starfill)
+            binding.btnStar.setImageResource(R.drawable.favorite)
         }
         binding.back.setOnClickListener {
             viewModel.goToBackScreen()
@@ -116,12 +116,12 @@ class InfoScreen : Fragment(R.layout.screen_info) {
             if (data.isFavourite == 0) {
                 Log.d("YYY", "LIKE")
                 viewModel.addToFavorite(data)
-                binding.btnStar.setImageResource(R.drawable.starfill)
+                binding.btnStar.setImageResource(R.drawable.favorite)
                 data.isFavourite = 1
             } else {
                 Log.d("YYY", "DISLIKE")
                 viewModel.deleteFromFavorite(data)
-                binding.btnStar.setImageResource(R.drawable.star)
+                binding.btnStar.setImageResource(R.drawable.nofavorite)
                 data.isFavourite = 0
             }
         }

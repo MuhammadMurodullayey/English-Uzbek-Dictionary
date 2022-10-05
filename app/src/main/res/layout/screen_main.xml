@@ -8,7 +8,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/barr"
-        android:background="#DCDADA"
+        android:background="#00BCD4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
                 android:layout_height="40dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/iconnn"/>
+                android:src="@drawable/kitob"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,8 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barr"
-        android:src="@drawable/iconnn"
-        android:padding="10dp"
+        android:src="@drawable/kitob"
         />
     <Button
         android:id="@+id/english_uz_btn"
@@ -69,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@id/main_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="#DCDADA"
+        android:backgroundTint="#00BCD4"
         android:text="@string/english_uzbek"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -82,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@id/english_uz_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="#DCDADA"
+        android:backgroundTint="#00BCD4"
         android:text="@string/o_zbekcha_inglizcha"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -95,7 +94,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="2433787446"
+        ads:adUnitId="ca-app-pub-1956375792431786/7413442549"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" >

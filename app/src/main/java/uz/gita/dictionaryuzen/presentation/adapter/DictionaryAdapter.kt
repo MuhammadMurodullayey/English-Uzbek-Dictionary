@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller
 import uz.gita.dictionaryuzen.data.model.ItemData
@@ -118,4 +117,8 @@ class DictionaryAdapter : RecyclerView.Adapter<DictionaryAdapter.ViewHolder>(), 
         }
         return ""
     }
+
+
+
+
 }

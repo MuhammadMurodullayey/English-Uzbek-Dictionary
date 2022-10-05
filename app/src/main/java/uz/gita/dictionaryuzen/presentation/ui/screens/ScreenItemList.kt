@@ -61,11 +61,9 @@ class ScreenItemList : Fragment(R.layout.screen_dictionary_list) {
 
             override fun onQueryTextChange(p0: String?): Boolean {
                 if (page == 0){
-                    Log.d("SSS","${p0}")
                     viewModel.getAllEnglishDataByQuery("$p0%" ?:"%%")
                     adapter.query = p0
                 }else{
-                    Log.d("SSS","${p0}")
                     viewModel.getAllUzbekDataByQuery("$p0%" ?:"%%")
                     adapter.query = p0
                 }
@@ -92,7 +90,6 @@ class ScreenItemList : Fragment(R.layout.screen_dictionary_list) {
     }
 
     private val getWordsObserver = Observer<Cursor> {
-        Log.d("TTT","${it.count}")
         if (it.count == 0){
             binding.emptyPleysholder.visibility = View.VISIBLE
         }else{

@@ -10,13 +10,12 @@
         android:id="@+id/back"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:src="@drawable/ic_baseline_arrow_back_ios"
+        android:src="@drawable/back"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:padding="8dp"
-        android:background="@drawable/bg_back"
+        android:padding="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,7 +54,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="verb"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#FFC400"/>
     <TextView
@@ -86,14 +85,15 @@
         app:layout_constraintBottom_toBottomOf="@id/word"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/star"
+        android:src="@drawable/nofavorite"
         />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/speaker"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:src="@drawable/speaker"
+        android:src="@drawable/volume1"
+        android:padding="5dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_star"
         app:layout_constraintEnd_toStartOf="@+id/btn_star"
@@ -107,7 +107,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-1956375792431786/7413442549"
+        ads:adUnitId="ca-app-pub-1956375792431786/8641967574"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         ads:layout_constraintTop_toBottomOf="@id/line">
