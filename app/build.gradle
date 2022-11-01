@@ -13,8 +13,8 @@ android {
         applicationId "uz.gita.dictionaryuzen"
         minSdk 21
         targetSdk 32
-        versionCode 4
-        versionName "3.1.1"
+        versionCode 5
+        versionName "3.1.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
@@ -138,6 +138,13 @@ dependencies {
     //ads
     implementation 'com.google.android.gms:play-services-ads:21.1.0'
     implementation 'com.google.android.gms:play-services-analytics:18.0.1'
+
+    // This dependency is downloaded from the Google’s Maven repository.
+    // So, make sure you also include that repository in your project's build.gradle file.
+    implementation("com.google.android.play:app-update:2.0.1")
+
+    // For Kotlin users also import the Kotlin extensions library for Play In-App Update:
+    implementation("com.google.android.play:app-update-ktx:2.0.0")
 
 
 

@@ -1,6 +1,7 @@
 package uz.gita.dictionaryuzen.presentation.ui.screens
 
 import android.annotation.SuppressLint
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +14,11 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
+import com.google.android.play.core.ktx.startUpdateFlowForResult
 import dagger.hilt.android.AndroidEntryPoint
 import uz.gita.dictionaryuzen.R
 import uz.gita.dictionaryuzen.databinding.ScreenMainBinding
@@ -30,6 +36,7 @@ class MainScreen : Fragment(R.layout.screen_main) {
     @SuppressLint("FragmentLiveDataObserve")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
+        updateVersion()
         val adRequest = AdRequest.Builder()
             .build()
         binding.adView.loadAd(adRequest)
@@ -83,10 +90,37 @@ class MainScreen : Fragment(R.layout.screen_main) {
 
     }
 
+     private fun updateVersion(){
+         val appUpdateManager = AppUpdateManagerFactory.create(requireContext())
+         val appUpdateInfoTask = appUpdateManager.appUpdateInfo
 
+         appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
+             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                 && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)){
+                 appUpdateManager.startUpdateFlowForResult(
+                     appUpdateInfo,
+                     AppUpdateType.FLEXIBLE,
+                     this,
+                     5
+                 )
+             }else{
+                 Log.d("MY_APP", "this is last version")
+             }
+         }
+     }
     private val goToNextScreenObserver = Observer<Int>{
         Position.POS = it
         findNavController().navigate(R.id.action_mainScreen_to_screenItemList)
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == 5) {
+            if (resultCode != RESULT_OK) {
+                Log.e("MY_APP", "Update flow failed! Result code: $resultCode")
+                updateVersion()
+            }else{
+                Log.d("MY_APP","APP SUCCESSFULLY UPDATED")
+            }
+        }
     }
 }
 

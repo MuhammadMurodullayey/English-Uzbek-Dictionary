@@ -88,7 +88,7 @@ class InfoScreen : Fragment(R.layout.screen_info) {
 
         if (Position.POS == 0) {
             binding.word.text = data.english
-            binding.word2.text = data.translate
+            binding.word2.text = "[${data.translate.replace("/", "")}]"
             binding.mean.text = data.uzbek
             binding.type.text = data.type
             binding.speaker.visibility = View.VISIBLE

@@ -34,16 +34,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 app:queryHint="Search-Qidiruv"
+                android:layout_marginEnd="5dp"
                 android:background="@drawable/bg_search"
                 app:searchIcon="@drawable/ic_baseline_search"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btn_star"
+                app:layout_constraintEnd_toStartOf="@id/btn_exchange"
                 app:layout_constraintStart_toEndOf="@id/image"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
-
-
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btn_exchange"
                 android:layout_width="40dp"
@@ -57,19 +54,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btn_star"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="5dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:padding="9dp"
-                android:src="@drawable/star"
-                app:layout_constraintEnd_toStartOf="@id/btn_exchange"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -103,5 +88,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barr"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:tint="@color/white"
+        android:src="@drawable/star"
+        android:backgroundTint="#03A9F4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
